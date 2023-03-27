@@ -15,11 +15,7 @@ public class ButtonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            otherObject.SetActive(false);
-            //add some fx and sfx
-        }
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
