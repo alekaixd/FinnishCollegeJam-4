@@ -12,9 +12,6 @@ public class MovementScript : MonoBehaviour
     private float horizontal;
     private float vertical;
 
-
-    //Helvetillinen määrä muuttujia "Dashaista" varten (puolet varmasti turhia)
-
     private bool canDash = true;
     private bool isDashing;
     private float DashingPower = 24f;
@@ -22,7 +19,8 @@ public class MovementScript : MonoBehaviour
     private float dashingCooldown = 1f;
 
 
-    [SerializeField] private TrailRenderer tr; //dashauksen taakse tulevan viivan saamiseksi
+    [SerializeField] private TrailRenderer tr; //dashauksen taakse tulevan viivan porttaamiseksi
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -45,11 +43,14 @@ public class MovementScript : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        Flip();
+        //Flip();
 
     }
+    //Flip oli koodia joka "flippasi" pelattavan hahmon ympäri jos sattui toiseen suuntaan katsomaan. Myöhemmin kun koko Dash koodi uusittiin niin tämä muuttui vähän hyödyttömäksi
 
-    private void Flip()
+    //Mutta on tärkeä huomata että tätä saatetaan vielä tarvita mm. animaatiotyössä, joten ÄLÄ POISTA!!!!!!!!!!!!!!!!
+
+    /*private void Flip() 
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
@@ -59,7 +60,7 @@ public class MovementScript : MonoBehaviour
             transform.localScale = localScale;
         }
 
-    }
+    }*/
 
     private IEnumerator Dash()
     {
@@ -74,7 +75,7 @@ public class MovementScript : MonoBehaviour
         tr.emitting = false; //poistaa vanan
         isDashing = false; //Aika selkeä
 
-        yield return new WaitForSeconds(dashingCooldown);
+        yield return new WaitForSeconds(dashingCooldown); //Cooldown dashiin
         canDash = true;
 
 
