@@ -8,7 +8,7 @@ public class MovementScript : MonoBehaviour
     public float speed;
     private Rigidbody2D rb2d;
 
-    private bool isFacingRight = true;
+    //private bool isFacingRight = true;  Tämä on pala vanhaa koodia, jota nykyinen (ja parempi) Dash ei tarvitse enää, tosin tätä saatetaan tarvita vielä animaatio työssä joten ÄLÄ POISTA!
     private float horizontal;
     private float vertical;
 
