@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject otherObject;
+    private int numberOfCollisions;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,21 @@ public class ButtonScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        otherObject.SetActive(false);
+        numberOfCollisions += 1;
+        if (numberOfCollisions == 1)
+        {
+            otherObject.SetActive(false);
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        otherObject.SetActive(true);
+        numberOfCollisions -= 1;
+        if (numberOfCollisions == 0)
+        {
+            otherObject.SetActive(true);
+        }
     }
 }
 

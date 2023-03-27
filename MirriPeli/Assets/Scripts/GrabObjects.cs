@@ -29,7 +29,7 @@ public class GrabObjects : MonoBehaviour
                 grabbedObject.transform.position = grabPoint.position;
                 grabbedObject.transform.SetParent(transform);
             }
-            else if (Input.GetKey(KeyCode.Space))
+            else if (Input.GetKey(KeyCode.Space) && grabbedObject != null)
             {
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
                 grabbedObject.transform.SetParent(null);
