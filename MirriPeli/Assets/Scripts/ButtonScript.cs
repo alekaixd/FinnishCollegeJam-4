@@ -18,12 +18,13 @@ public class ButtonScript : MonoBehaviour
         
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            otherObject.SetActive(false);
-            //add some fx and sfx
-        }
+        otherObject.SetActive(false);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        otherObject.SetActive(true);
     }
 }
