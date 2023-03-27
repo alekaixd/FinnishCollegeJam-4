@@ -20,9 +20,9 @@ public class GrabObjects : MonoBehaviour
     void Update()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, transform.up, rayDistance);
-        if(hitInfo.collider!=null && hitInfo.collider.gameObject.layer == layerIndex)
+        if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
         {
-            if(Input.GetKey(KeyCode.Space) && grabbedObject == null)
+            if (Input.GetKey(KeyCode.Space) && grabbedObject == null)
             {
                 grabbedObject = hitInfo.collider.gameObject;
                 grabbedObject.GetComponent<Rigidbody2D>().isKinematic = true;
