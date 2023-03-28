@@ -7,20 +7,7 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private Transform destination;
 
     public Transform GetDestination(){
+        UnityEngine.Debug.Log("Destinaatio löytynyt");
         return destination;
-    }
-        
-      
-        
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
