@@ -42,6 +42,15 @@ public class MovementScript : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+        // Rotate player to face direction of movement (if movement is non-zero)
+        if (rb2d.velocity != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+
+        // Apply movement to player's rigidbody
+        rb2d.MovePosition(rb2d.position + rb2d.velocity * Time.deltaTime);
 
         //Flip();
 
