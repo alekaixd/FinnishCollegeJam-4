@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class MovementScript : MonoBehaviour
@@ -91,5 +93,13 @@ public class MovementScript : MonoBehaviour
 
 
     }
-
+    /*
+    while (x == y)
+    {
+        func1();     
+        func2();
+    }
+     
+     */
 }
+
