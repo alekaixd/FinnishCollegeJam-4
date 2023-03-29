@@ -436,8 +436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcda395f7f69b44489d540e07d45c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 40
   tr: {fileID: 1355210481}
+  grabObjects: {fileID: 1355210480}
 --- !u!50 &1355210476
 Rigidbody2D:
   serializedVersion: 4
@@ -569,6 +570,7 @@ MonoBehaviour:
   grabPoint: {fileID: 1233642489}
   rayPoint: {fileID: 391984955}
   rayDistance: 0.2
+  grabbedObject: {fileID: 0}
 --- !u!96 &1355210481
 TrailRenderer:
   serializedVersion: 2
