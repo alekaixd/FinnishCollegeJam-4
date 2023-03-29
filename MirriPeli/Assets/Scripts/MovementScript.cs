@@ -20,6 +20,7 @@ public class MovementScript : MonoBehaviour
 
 
     [SerializeField] private TrailRenderer tr; //dashauksen taakse tulevan viivan porttaamiseksi
+    [SerializeField] private GrabObjects grabObjects;
 
     void Start()
     {
@@ -43,10 +44,10 @@ public class MovementScript : MonoBehaviour
             StartCoroutine(Dash());
         }
         // Rotate player to face direction of movement (if movement is non-zero)
-        if (rb2d.velocity != Vector2.zero)
+        if (rb2d.velocity != Vector2.zero && grabObjects.grabbedObject == null)
         {
             float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
         // Apply movement to player's rigidbody

@@ -8,7 +8,7 @@ public class GrabObjects : MonoBehaviour
     [SerializeField] private Transform rayPoint;
     [SerializeField] private float rayDistance;
 
-    private GameObject grabbedObject;
+    public GameObject grabbedObject;
     private int layerIndex;
     private Vector2 originalSize;
     private Vector2 originalOffset;
