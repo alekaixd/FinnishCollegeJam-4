@@ -8,6 +8,9 @@ public class Triggerscript1 : MonoBehaviour
     [SerializeField] private AudioSource l1x3;
     [SerializeField] private AudioSource l1x4;
     [SerializeField] private AudioSource l1x5;
+
+    [SerializeField] private AudioSource l2x2;
+    [SerializeField] private AudioSource l2x3;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,15 @@ public class Triggerscript1 : MonoBehaviour
         {
             l1x4.Stop();
             l1x5.Play();
+        }
+        if (collision.CompareTag("Trigger6"))
+        {
+            l2x2.Play();
+        }
+        if (collision.CompareTag("Trigger6"))
+        {
+            l2x2.Stop();
+            l2x3.Play();
         }
 
     }
