@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Skycollide : MonoBehaviour
 {
+    MovementScript move;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("player");
     }
 
     // Update is called once per frame
@@ -15,5 +17,12 @@ public class Skycollide : MonoBehaviour
     {
         
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        player.GetComponent<MovementScript>().IsGonnaDie = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        player.GetComponent<MovementScript>().IsGonnaDie = false;
+    }
 }

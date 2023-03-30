@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
-
+	public bool IsGonnaDie;
 	public float speed;
 	private Rigidbody2D rb2d;
-	Animator animator;
 
 	//private bool isFacingRight = true;  Tämä on pala vanhaa koodia, jota nykyinen (ja parempi) Dash ei tarvitse enää, tosin tätä saatetaan tarvita vielä animaatio työssä joten ÄLÄ POISTA!
 	private float horizontal;
@@ -38,21 +38,15 @@ public class MovementScript : MonoBehaviour
 		}
 
 		horizontal = Input.GetAxis("Horizontal");
-		animator.SetFloat("MoveX", horizontal);
+		gameObject.GetComponent<Animator>().SetFloat("MoveX", horizontal);
 		vertical = Input.GetAxis("Vertical");
-		animator.SetFloat("MoveY", vertical);
+		gameObject.GetComponent<Animator>().SetFloat("MoveY", vertical);
 
 		rb2d.velocity = new Vector2(horizontal * speed, vertical * speed);
 
 		if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
 		{
 			StartCoroutine(Dash());
-		}
-		// Rotate player to face direction of movement (if movement is non-zero)
-		if (rb2d.velocity != Vector2.zero && grabObjects.grabbedObject == null)
-		{
-			float angle = Mathf.Atan2(rb2d.velocity.y, rb2d.velocity.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
 		}
 
 		// Apply movement to player's rigidbody
@@ -91,9 +85,14 @@ public class MovementScript : MonoBehaviour
 		yield return new WaitForSeconds(dashingTime);
 		tr.emitting = false; //poistaa vanan
 		isDashing = false; //Aika selkeä
-
-		yield return new WaitForSeconds(dashingCooldown); //Cooldown dashiin
 		sky.GetComponent<Collider2D>().isTrigger = false;//Muuta taivas triggeristä collideriksi
+		if (IsGonnaDie)
+        {
+			var current = SceneManager.GetActiveScene();
+			SceneManager.SetActiveScene(current);
+        }
+		yield return new WaitForSeconds(dashingCooldown); //Cooldown dashiin
+		
 		canDash = true;
 		
 
