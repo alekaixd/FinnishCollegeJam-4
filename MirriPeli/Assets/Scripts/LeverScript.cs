@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LeverScript : MonoBehaviour
 {
     public GameObject activateObject;
-    private bool hasContact;
+    [SerializeField]private bool hasContact;
+    public TextMeshProUGUI infoText;
 
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         hasContact = true;
-        
+        infoText.text = "Press E to activate!";
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
+        
         hasContact = false;
+        infoText.text = "";
     }
 
     private void Update()
     {
         if(hasContact == true)
         {
+            
             if (Input.GetKeyDown(KeyCode.E) && activateObject.activeSelf)
             {
                 Debug.Log("ressed E");
