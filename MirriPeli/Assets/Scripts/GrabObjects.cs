@@ -28,11 +28,9 @@ public class GrabObjects : MonoBehaviour
     {
         foreach (Vector2 direction in directions)
         {
-            Debug.Log("updater");
             RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, direction, rayDistance, ~LayerMask.NameToLayer("Default"));
             if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
             {
-                Debug.Log("poger");
                 if (Input.GetKeyDown(KeyCode.Space) && grabbedObject == null)
                 {
                     Debug.Log("key down");
@@ -62,7 +60,6 @@ public class GrabObjects : MonoBehaviour
                 }
             }
             Debug.DrawRay(rayPoint.position, direction * rayDistance);
-            Debug.Log(hitInfo.collider.gameObject.name);
         }
 
         
