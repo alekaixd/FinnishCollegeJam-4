@@ -54,7 +54,7 @@ public class MovementScript : MonoBehaviour
 		rb2d.MovePosition(rb2d.position + rb2d.velocity * Time.deltaTime);
 
 		Vector2 direction = new Vector2(horizontal, vertical).normalized;
-		if (direction.magnitude > 0)
+		if (direction.magnitude > 0 && grabObjects.grabbedObject != true)
 		{
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 			rotationObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
