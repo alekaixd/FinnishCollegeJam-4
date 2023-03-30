@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873a564dc6e70ee48b1160c6cd726ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoText: {fileID: 0}
 --- !u!1001 &69957448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1413,7 +1414,6 @@ GameObject:
   - component: {fileID: 1437973977}
   - component: {fileID: 1437973980}
   - component: {fileID: 1437973979}
-  - component: {fileID: 1437973978}
   - component: {fileID: 1437973981}
   m_Layer: 0
   m_Name: Plane
@@ -1437,20 +1437,6 @@ Transform:
   m_Father: {fileID: 839278140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
---- !u!64 &1437973978
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437973976}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1437973979
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3934,7 +3920,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ead2a20aa0e8895458695fb5846c9ca5, type: 2}
+  - {fileID: 2100000, guid: a9f84881abde25b48904c0ff67bca145, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
