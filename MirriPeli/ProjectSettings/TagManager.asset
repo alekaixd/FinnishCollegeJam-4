@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Teleporter
+  - Trigger2
+  - Trigger3
+  - Trigger4
+  - Trigger5
   layers:
   - Default
   - TransparentFX
