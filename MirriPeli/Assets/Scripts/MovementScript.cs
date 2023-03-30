@@ -39,9 +39,9 @@ public class MovementScript : MonoBehaviour
 		}
 
 		horizontal = Input.GetAxis("Horizontal");
-		gameObject.GetComponent<Animator>().SetFloat("MoveX", horizontal);
+		gameObject.GetComponent<Animator>().SetFloat("MoveX", Convert.ToInt32(horizontal));
 		vertical = Input.GetAxis("Vertical");
-		gameObject.GetComponent<Animator>().SetFloat("MoveY", vertical);
+		gameObject.GetComponent<Animator>().SetFloat("MoveY", Convert.ToInt32(vertical));
 
 		rb2d.velocity = new Vector2(horizontal * speed, vertical * speed);
 

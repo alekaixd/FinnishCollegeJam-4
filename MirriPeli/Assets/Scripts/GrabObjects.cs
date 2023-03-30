@@ -62,6 +62,7 @@ public class GrabObjects : MonoBehaviour
                 }
             }
             Debug.DrawRay(rayPoint.position, direction * rayDistance);
+            Debug.Log(hitInfo.collider.gameObject.name);
         }
 
         
