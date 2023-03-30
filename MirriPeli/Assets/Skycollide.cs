@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Skycollide : MonoBehaviour
 {
-    MovementScript move;
     GameObject player;
     // Start is called before the first frame update
     void Start()

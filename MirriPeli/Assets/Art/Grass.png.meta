@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -547,26 +559,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Grass_0: -1185567098
-      Grass_1: 1952501183
-      Grass_10: 719951572
-      Grass_11: 89278195
-      Grass_12: -803734654
-      Grass_13: -939410100
-      Grass_14: 1668070783
-      Grass_15: 1359087478
-      Grass_16: 871199634
-      Grass_17: -1490265694
-      Grass_18: -655844125
-      Grass_19: 1620729241
-      Grass_2: -800147691
-      Grass_3: -1687088840
-      Grass_4: -612710425
-      Grass_5: 398002748
-      Grass_6: -908211161
-      Grass_7: -778085048
-      Grass_8: -1880823179
       Grass_9: 1102554866
+      Grass_5: 398002748
+      Grass_0: -1185567098
+      Grass_2: -800147691
+      Grass_1: 1952501183
+      Grass_6: -908211161
+      Grass_3: -1687088840
+      Grass_7: -778085048
+      Grass_10: 719951572
+      Grass_12: -803734654
+      Grass_18: -655844125
+      Grass_11: 89278195
+      Grass_14: 1668070783
+      Grass_4: -612710425
+      Grass_15: 1359087478
+      Grass_13: -939410100
+      Grass_17: -1490265694
+      Grass_16: 871199634
+      Grass_19: 1620729241
+      Grass_8: -1880823179
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
