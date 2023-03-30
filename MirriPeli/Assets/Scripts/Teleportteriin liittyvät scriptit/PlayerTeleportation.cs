@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using TMPro;
 
 
 public class PlayerTeleportation : MonoBehaviour
 {
     private GameObject currentTeleporter;
+    public TextMeshProUGUI infoText;
 
     void Update()
     {
@@ -30,6 +32,7 @@ public class PlayerTeleportation : MonoBehaviour
         if (collision.CompareTag("Teleporter"))
         {
             currentTeleporter = collision.gameObject;
+            infoText.text = "Press E to teleport!";
         }
     }
 
@@ -40,6 +43,7 @@ public class PlayerTeleportation : MonoBehaviour
             if (collision.gameObject == currentTeleporter)
             {
                 currentTeleporter = null;
+                infoText.text = "";
             }
         }
     }

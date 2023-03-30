@@ -9,6 +9,8 @@ public class ButtonScript : MonoBehaviour
     public Sprite pressedDownSprite;
     private int numberOfCollisions;
     private SpriteRenderer spriteRenderer;
+    public bool activated = false;
+    public GameObject otherButton;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,18 @@ public class ButtonScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (activated == true && otherButton == null)
+        {
+            otherObject.SetActive(false);
+        }
+        else if (activated == true && otherButton.GetComponent<ButtonScript>().activated == true)
+        {
+            otherObject.SetActive(false);
+        }
+        else
+        {
+            otherObject.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +41,7 @@ public class ButtonScript : MonoBehaviour
         numberOfCollisions += 1;
         if (numberOfCollisions == 1)
         {
-            otherObject.SetActive(false);
+            activated = true;
             spriteRenderer.sprite = pressedDownSprite;
         }
         
@@ -39,7 +52,8 @@ public class ButtonScript : MonoBehaviour
         numberOfCollisions -= 1;
         if (numberOfCollisions == 0)
         {
-            otherObject.SetActive(true);
+            activated = false;
+            
             spriteRenderer.sprite = originalSprite;
         }
     }

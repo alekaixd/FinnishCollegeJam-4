@@ -20,6 +20,7 @@ public class MovementScript : MonoBehaviour
 	private float DashingPower = 24f;
 	private float dashingTime = 0.2f;
 	private float dashingCooldown = 1f;
+	public GameObject rotationObject;
 
 
 	[SerializeField] private TrailRenderer tr; //dashauksen taakse tulevan viivan porttaamiseksi
@@ -52,6 +53,12 @@ public class MovementScript : MonoBehaviour
 		// Apply movement to player's rigidbody
 		rb2d.MovePosition(rb2d.position + rb2d.velocity * Time.deltaTime);
 
+		Vector2 direction = new Vector2(horizontal, vertical).normalized;
+		if (direction.magnitude > 0)
+		{
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			rotationObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+		}
 		//Flip();
 
 	}
