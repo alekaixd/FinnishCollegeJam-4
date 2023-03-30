@@ -28,10 +28,13 @@ public class Triggerscript1 : MonoBehaviour
         }
         if (collision.CompareTag("Trigger3"))
         {
+            l1x2.Stop();
             l1x3.Play();
+
         }
         if (collision.CompareTag("Trigger4"))
         {
+            l1x3.Stop();
             l1x4.Play();
         }
         if (collision.CompareTag("Trigger4"))
