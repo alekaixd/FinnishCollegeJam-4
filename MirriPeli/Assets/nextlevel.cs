@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class nextlevel : MonoBehaviour
 {
-    Scene Level1, Level2, Level3;
+    Scene Level1, Level2, Level3, level4;
     private void Start()
     {
         Level1 = SceneManager.GetSceneByName("Level 1");
         Level2 = SceneManager.GetSceneByName("Level 2");
         Level3 = SceneManager.GetSceneByName("Level 3");
+        Level4 = SceneManager.GetSceneByName("Level 4");
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,6 +27,10 @@ public class nextlevel : MonoBehaviour
         if (SceneManager.GetActiveScene() == Level3)
         {
             SceneManager.LoadScene("Level 4");
+        }
+        if (SceneManager.GetActiveScene() == Level4)
+        {
+            SceneManager.LoadScene("Level 5");
         }
     }
 }
