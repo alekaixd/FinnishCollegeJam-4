@@ -9,6 +9,7 @@ public class MovementScript : MonoBehaviour
 
 	public float speed;
 	private Rigidbody2D rb2d;
+	Animator animator;
 
 	//private bool isFacingRight = true;  Tämä on pala vanhaa koodia, jota nykyinen (ja parempi) Dash ei tarvitse enää, tosin tätä saatetaan tarvita vielä animaatio työssä joten ÄLÄ POISTA!
 	private float horizontal;
@@ -37,7 +38,9 @@ public class MovementScript : MonoBehaviour
 		}
 
 		horizontal = Input.GetAxis("Horizontal");
+		animator.SetFloat("MoveX", horizontal);
 		vertical = Input.GetAxis("Vertical");
+		animator.SetFloat("MoveY", vertical);
 
 		rb2d.velocity = new Vector2(horizontal * speed, vertical * speed);
 
@@ -76,7 +79,7 @@ public class MovementScript : MonoBehaviour
 
 	private IEnumerator Dash()
 	{
-		var sky = GameObject.Find("Sky");				//Hae taivas tilemap
+		var sky = GameObject.Find("Skycollider");				//Hae taivas tilemap
 		sky.GetComponent<Collider2D>().isTrigger = true;//Muuta taivas collideristä triggeriksi
 		canDash = false; //Varmistaa ettei Dashayksen aikana voi dashata
 		isDashing = true; //Aika selkeä
@@ -92,7 +95,7 @@ public class MovementScript : MonoBehaviour
 		yield return new WaitForSeconds(dashingCooldown); //Cooldown dashiin
 		sky.GetComponent<Collider2D>().isTrigger = false;//Muuta taivas triggeristä collideriksi
 		canDash = true;
-
+		
 
 
 	}

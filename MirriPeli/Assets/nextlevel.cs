@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class nextlevel : MonoBehaviour
 {
-    Scene Level1, Level2, Level3, level4;
+    Scene Level1, Level2, Level3, Level4;
     private void Start()
     {
         Level1 = SceneManager.GetSceneByName("Level 1");
