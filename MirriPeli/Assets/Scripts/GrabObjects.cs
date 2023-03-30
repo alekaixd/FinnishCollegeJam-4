@@ -28,9 +28,11 @@ public class GrabObjects : MonoBehaviour
     {
         foreach (Vector2 direction in directions)
         {
+            Debug.Log("updater");
             RaycastHit2D hitInfo = Physics2D.Raycast(rayPoint.position, direction, rayDistance, ~LayerMask.NameToLayer("Default"));
             if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == layerIndex)
             {
+                Debug.Log("poger");
                 if (Input.GetKeyDown(KeyCode.Space) && grabbedObject == null)
                 {
                     Debug.Log("key down");
@@ -46,7 +48,7 @@ public class GrabObjects : MonoBehaviour
                     collider2D.size = newSize;
                     collider2D.offset += newOffset;
                 }
-                else if (Input.GetKey(KeyCode.Space) != true && grabbedObject != null) // kun palikan laittaa napin p‰‰lle se ei irtoa otteesta
+                else if (Input.GetKeyUp(KeyCode.Space)) // kun palikan laittaa napin p‰‰lle se ei irtoa otteesta
                 {
                     Debug.Log("key up");
                     grabbedObject.GetComponent<Rigidbody2D>().isKinematic = false;
@@ -59,7 +61,6 @@ public class GrabObjects : MonoBehaviour
                     collider2D.offset = originalOffset;
                 }
             }
-
             Debug.DrawRay(rayPoint.position, direction * rayDistance);
         }
 
