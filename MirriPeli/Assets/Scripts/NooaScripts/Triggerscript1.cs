@@ -41,11 +41,6 @@ public class Triggerscript1 : MonoBehaviour
             l1x3.Stop();
             l1x4.Play();
         }
-        if (collision.CompareTag("Trigger4"))
-        {
-            l1x3.Stop();
-            l1x4.Play();
-        }
         if (collision.CompareTag("Trigger5"))
         {
             l1x4.Stop();
