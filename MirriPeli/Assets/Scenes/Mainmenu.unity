@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 2048601342}
   - component: {fileID: 2048601341}
   - component: {fileID: 2048601340}
-  - component: {fileID: 2048601339}
+  - component: {fileID: 2048601343}
   m_Layer: 5
   m_Name: ButtonControls
   m_TagString: Untagged
@@ -1391,19 +1391,6 @@ RectTransform:
   m_AnchoredPosition: {x: -128, y: -114}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2048601339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048601337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6a38160bdd33a408bedf911af82795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2048601340}
 --- !u!114 &2048601340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,3 +1473,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048601337}
   m_CullTransparentMesh: 1
+--- !u!114 &2048601343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048601337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fed516095533840ad458340d055249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2048601340}
