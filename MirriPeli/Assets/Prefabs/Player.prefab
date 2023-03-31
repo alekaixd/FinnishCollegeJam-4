@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGonnaDie: 0
-  speed: 10
+  speed: 6
   rotationObject: {fileID: 3292713857375480537}
   tr: {fileID: 1985355161075870360}
   grabObjects: {fileID: 1985355161075870361}

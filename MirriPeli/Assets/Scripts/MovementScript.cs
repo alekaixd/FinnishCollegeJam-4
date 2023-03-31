@@ -51,7 +51,7 @@ public class MovementScript : MonoBehaviour
 		}
 
 		// Apply movement to player's rigidbody
-		rb2d.MovePosition(rb2d.position + rb2d.velocity * Time.deltaTime);
+		// no fixed update!!!
 
 		Vector2 direction = new Vector2(horizontal, vertical).normalized;
 		if (direction.magnitude > 0 && grabObjects.grabbedObject != true)
@@ -61,6 +61,11 @@ public class MovementScript : MonoBehaviour
 		}
 		//Flip();
 
+	}
+
+    private void FixedUpdate()
+    {
+		rb2d.MovePosition(rb2d.position + rb2d.velocity * Time.fixedDeltaTime);
 	}
     //Flip oli koodia joka "flippasi" pelattavan hahmon ympäri jos sattui toiseen suuntaan katsomaan. Myöhemmin kun koko Dash koodi uusittiin niin tämä muuttui vähän hyödyttömäksi
 
