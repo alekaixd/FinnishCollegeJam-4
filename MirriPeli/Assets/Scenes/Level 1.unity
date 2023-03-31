@@ -56315,6 +56315,11 @@ MonoBehaviour:
   l1x3: {fileID: 154055443}
   l1x4: {fileID: 154055445}
   l1x5: {fileID: 154055444}
+  l2x2: {fileID: 0}
+  l2x3: {fileID: 0}
+  l2x4: {fileID: 0}
+  l4x2: {fileID: 0}
+  l6x2: {fileID: 0}
 --- !u!82 &154055443
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56659,7 +56664,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &541569648
 PrefabInstance:
@@ -60748,6 +60753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 761838221}
   - component: {fileID: 761838220}
+  - component: {fileID: 761838222}
   m_Layer: 0
   m_Name: Musiikki playeri
   m_TagString: Untagged
@@ -60866,6 +60872,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761838222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761838219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a9913429f33d74db4f252e2edb0562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004154061
 GameObject:
   m_ObjectHideFlags: 0
@@ -60922,7 +60940,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1138958575
 PrefabInstance:
@@ -63981,7 +63999,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778956361
 GameObject:
@@ -64475,7 +64493,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2107157267
 PrefabInstance:
@@ -64632,7 +64650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135268199
 GameObject:
